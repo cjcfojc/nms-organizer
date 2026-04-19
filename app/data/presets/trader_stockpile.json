@@ -1,0 +1,182 @@
+{
+  "schema_version": 2,
+  "id": "trader_stockpile",
+  "label": "Trader Stockpile",
+  "description": "Same as The Vault but Trade gets two chests: one for commodities, one for high-value tradeables. Curios folded into Components.",
+  "sources": {
+    "chests": "all",
+    "freighter_inventory": true,
+    "freighter_cargo": true,
+    "ships": "all",
+    "vehicles": "all",
+    "exosuit_general": false,
+    "exosuit_cargo": false
+  },
+  "exclude_ships_by_seed": [],
+  "operational_reserves": {
+    "ship": [
+      {
+        "id": "ROCKETSUB",
+        "stacks": 1,
+        "note": "Tritium"
+      },
+      {
+        "id": "JELLY",
+        "stacks": 1,
+        "note": "Di-Hydrogen Jelly"
+      },
+      {
+        "id": "HYPERFUEL1",
+        "stacks": 2,
+        "note": "Warp Cell"
+      },
+      {
+        "id": "ANTIMATTER",
+        "stacks": 1
+      },
+      {
+        "id": "AM_HOUSING",
+        "stacks": 1
+      },
+      {
+        "id": "CATALYST2",
+        "stacks": 1,
+        "note": "Sodium Nitrate"
+      },
+      {
+        "id": "SHIPCHARGE",
+        "stacks": 1,
+        "note": "Starshield Battery"
+      },
+      {
+        "id": "REPAIRKIT",
+        "stacks": 1
+      }
+    ],
+    "freighter": [
+      {
+        "id": "HYPERFUEL2",
+        "stacks": 1,
+        "note": "Warp Hypercore"
+      },
+      {
+        "id": "HYPERFUEL1",
+        "stacks": 1
+      },
+      {
+        "id": "FRIGATE_FUEL_1",
+        "stacks": 1
+      },
+      {
+        "id": "FRIGATE_FUEL_2",
+        "stacks": 1
+      },
+      {
+        "id": "FRIGATE_FUEL_3",
+        "stacks": 1
+      },
+      {
+        "id": "FRIG_BOOST_SPD",
+        "stacks": 1,
+        "note": "Fuel Oxidiser"
+      }
+    ],
+    "vehicle": [
+      {
+        "id": "RADIO1",
+        "stacks": 1,
+        "note": "Uranium"
+      }
+    ],
+    "exosuit": []
+  },
+  "chests": [
+    {
+      "index": 1,
+      "name": "Raw — Common",
+      "buckets": [
+        "Raw_Local"
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Raw — Stellar Metals",
+      "buckets": [
+        "Raw_Stellar"
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Raw — Atmospheric",
+      "buckets": [
+        "Raw_Atmospheric"
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Raw — Exotic & Organic",
+      "buckets": [
+        "Raw_Exotic"
+      ]
+    },
+    {
+      "index": 5,
+      "name": "Components & Curios",
+      "buckets": [
+        "Components"
+      ]
+    },
+    {
+      "index": 6,
+      "name": "Cooking & Bait",
+      "buckets": [
+        "Cooking"
+      ]
+    },
+    {
+      "index": 7,
+      "name": "Trade — Commodities",
+      "buckets": [
+        "Trade"
+      ]
+    },
+    {
+      "index": 8,
+      "name": "Trade — High Value",
+      "buckets": [
+        "Trade"
+      ]
+    },
+    {
+      "index": 9,
+      "name": "Tech Modules",
+      "buckets": [
+        "Tech_Modules"
+      ]
+    },
+    {
+      "index": 10,
+      "name": "Contraband",
+      "buckets": [
+        "Contraband",
+        "Salvage_Charts"
+      ]
+    }
+  ],
+  "consolidate_stacks": true,
+  "overflow_strategy": "leave_in_source",
+  "overflow_chest_index": null,
+  "bucket_stack_caps": {
+    "Raw_Local": 5,
+    "Raw_Stellar": 5,
+    "Raw_Atmospheric": 5,
+    "Raw_Exotic": 5,
+    "Components": null,
+    "Curios": null,
+    "Cooking": null,
+    "Trade": null,
+    "Tech_Modules": null,
+    "Contraband": null,
+    "Salvage_Charts": null
+  }
+}

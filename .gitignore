@@ -1,0 +1,51 @@
+# ─── Personal save data ───────────────────────────────────────────────
+# These hold the user's actual NMS save bytes/JSON — never commit.
+applied/
+backups/
+test_save/
+save.json
+save.roundtrip.hg
+
+# ─── Per-session runtime data ─────────────────────────────────────────
+# Logs may contain save filenames, paths, or item details. Each user has
+# their own session logs.
+logs/
+
+# ─── Extracted game assets (copyrighted) ──────────────────────────────
+# app/assets/icons/ is populated locally by `node extract_icons.js` —
+# the PNGs are HelloGames assets we can't redistribute.
+app/assets/icons/
+extracted/
+
+# ─── Local user config ────────────────────────────────────────────────
+# nmsorganizer.config.json holds per-user paths (NMS install, hgpaktool
+# location). Created by the setup wizard on first run.
+nmsorganizer.config.json
+
+# ─── Tool binaries (downloaded by user) ───────────────────────────────
+# texconv.exe IS bundled (Microsoft, MIT). hgpaktool.exe is GPLv3 and
+# must be downloaded separately by the user — keep their local copy
+# out of git.
+tools/hgpaktool.exe
+tools/hgpaktool/
+
+# ─── Editor / OS noise ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# ─── Node ─────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─── Build outputs / scratch ──────────────────────────────────────────
+*.log
+*.bak
+*.tmp

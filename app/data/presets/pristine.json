@@ -1,0 +1,109 @@
+{
+  "schema_version": 2,
+  "id": "pristine",
+  "label": "Pristine",
+  "description": "Sort items into category order but never consolidate stacks or empty source containers. Most conservative option — minimum disruption.",
+  "sources": {
+    "chests": "all",
+    "freighter_inventory": false,
+    "freighter_cargo": false,
+    "ships": "none",
+    "vehicles": "none",
+    "exosuit_general": false,
+    "exosuit_cargo": false
+  },
+  "exclude_ships_by_seed": [],
+  "operational_reserves": {
+    "ship": [],
+    "freighter": []
+  },
+  "chests": [
+    {
+      "index": 1,
+      "name": "Raw — Common",
+      "buckets": [
+        "Raw_Local"
+      ]
+    },
+    {
+      "index": 2,
+      "name": "Raw — Stellar Metals",
+      "buckets": [
+        "Raw_Stellar"
+      ]
+    },
+    {
+      "index": 3,
+      "name": "Raw — Atmospheric",
+      "buckets": [
+        "Raw_Atmospheric"
+      ]
+    },
+    {
+      "index": 4,
+      "name": "Raw — Exotic & Organic",
+      "buckets": [
+        "Raw_Exotic"
+      ]
+    },
+    {
+      "index": 5,
+      "name": "Components",
+      "buckets": [
+        "Components"
+      ]
+    },
+    {
+      "index": 6,
+      "name": "Curios",
+      "buckets": [
+        "Curios"
+      ]
+    },
+    {
+      "index": 7,
+      "name": "Cooking & Bait",
+      "buckets": [
+        "Cooking"
+      ]
+    },
+    {
+      "index": 8,
+      "name": "Trade Commodities",
+      "buckets": [
+        "Trade"
+      ]
+    },
+    {
+      "index": 9,
+      "name": "Tech Modules",
+      "buckets": [
+        "Tech_Modules"
+      ]
+    },
+    {
+      "index": 10,
+      "name": "Contraband",
+      "buckets": [
+        "Contraband",
+        "Salvage_Charts"
+      ]
+    }
+  ],
+  "consolidate_stacks": false,
+  "overflow_strategy": "leave_in_source",
+  "overflow_chest_index": null,
+  "bucket_stack_caps": {
+    "Raw_Local": 5,
+    "Raw_Stellar": 5,
+    "Raw_Atmospheric": 5,
+    "Raw_Exotic": 5,
+    "Components": null,
+    "Curios": null,
+    "Cooking": null,
+    "Trade": null,
+    "Tech_Modules": null,
+    "Contraband": null,
+    "Salvage_Charts": null
+  }
+}

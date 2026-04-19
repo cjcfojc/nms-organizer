@@ -1,0 +1,52 @@
+MIT License
+
+Copyright (c) 2026 cjcfojc
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+────────────────────────────────────────────────────────────────────────────────
+
+THIRD-PARTY COMPONENTS
+
+This repository bundles or builds on the following third-party components,
+each under its own license. None of them are MIT-incompatible.
+
+  tools/texconv.exe
+    Microsoft DirectXTex — MIT
+    https://github.com/microsoft/DirectXTex
+
+  app/data/mapping.json, app/data/loc.json, app/data/taxonomy.json
+    Derived from MBINCompiler-extracted NMS data (MIT)
+    https://github.com/monkeyman192/MBINCompiler
+
+  app/data/icons.json (manifest only — the PNG files are NOT bundled)
+    Filenames and paths derived from MBINCompiler taxonomy data.
+
+THIRD-PARTY COMPONENTS NOT INCLUDED IN THIS REPO
+
+The following are required to use the icon-extraction feature but are not
+shipped here. Users provide them via the setup wizard.
+
+  hgpaktool.exe
+    From AMUMSS (https://github.com/HolterPhylo/AMUMSS) or zencq/HGPak
+    (https://github.com/zencq/HGPak). License: GPLv3.
+
+  No Man's Sky game assets (.dds icon textures inside NMSARC.TexUI.pak)
+    © Hello Games. Extracted locally from your own install for personal
+    use only. Not redistributed.

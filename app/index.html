@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" data-density="normal">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>No Man's Organizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app" data-terminal="open">
+
+    <!-- ─── TOP BAR ─────────────────────────────────────────────────── -->
+    <header class="topbar">
+      <a class="brand" href="#" data-action="open-save" title="Open save">
+        <img class="brand-mark" data-brand-mark alt="No Man's Organizer">
+        <span class="brand-fallback">
+          <span class="brand-title">NO MAN'S ORGANIZER</span>
+          <span class="brand-sub">INVENTORY ARCHIVE &middot; LAYOUT TOOL</span>
+        </span>
+      </a>
+      <div class="topbar-divider"></div>
+      <div class="topbar-status">
+        <span class="status-pill" data-pill-loaded>
+          <span class="label">SAVE LOADED</span>
+          <span class="value" data-status-loaded>—</span>
+        </span>
+        <span class="status-pill" data-pill-backup>
+          <span class="label">SAVE BACKED UP</span>
+          <span class="value" data-status-backup>—</span>
+        </span>
+        <span class="status-pill info"><span class="label">NMS</span><span class="value">6.33</span></span>
+        <span class="status-pill"><span class="label">libMBIN</span><span class="value">6.33.0.2</span></span>
+        <span class="status-pill"><span class="label">TAXONOMY</span><span class="value">2,862 ids</span></span>
+        <span class="status-pill"><span class="label">SLOT</span><span class="value" data-status-slot>—</span></span>
+      </div>
+      <div class="topbar-spacer"></div>
+      <div class="topbar-actions">
+        <button class="btn icon" data-density-toggle title="Toggle UI density">DENSITY: NORMAL</button>
+        <button class="btn primary" data-action="open-save">OPEN SAVE</button>
+        <button class="btn" data-action="backup-now" disabled>BACKUP NOW</button>
+        <button class="btn warn" data-action="apply-plan" disabled>APPLY PLAN</button>
+      </div>
+    </header>
+
+    <!-- ─── SOURCES (left) ─────────────────────────────────────────── -->
+    <aside class="sources pane">
+      <div class="pane-header">
+        <span class="pane-title">SOURCES</span>
+        <span class="pane-sub">SELECT TO INCLUDE</span>
+      </div>
+      <div class="pane-body">
+        <div class="sources-tree" data-sources-empty>
+          <div class="empty-state" style="padding: var(--sp-4);">
+            <div class="glyph">▢</div>
+            <div class="msg">No save loaded</div>
+            <div class="hint">Your storage containers, ships, freighter, and exocrafts will appear here once you open a save file.</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ─── MAIN WORKSPACE (center) ────────────────────────────────── -->
+    <section class="main pane">
+      <div class="tabs">
+        <div class="tab active" data-tab="audit">AUDIT <span class="badge">read-only</span></div>
+        <div class="tab" data-tab="layout">LAYOUT</div>
+        <div class="tab" data-tab="preview">PREVIEW</div>
+        <div class="tab" data-tab="apply">APPLY</div>
+      </div>
+
+      <div class="tab-content">
+        <div class="tab-pane active" data-pane="audit">
+          <div class="welcome">
+            <img class="welcome-banner" data-welcome-banner alt="No Man's Organizer — Localized Inventory Management">
+            <div class="welcome-msg">Local. Lossless. No cloud, no telemetry.</div>
+            <div class="welcome-hint">
+              <span>OPEN A SAVE FILE TO BEGIN</span>
+              <span style="color:var(--fg-dim)">v0.3 &middot; alpha</span>
+            </div>
+            <button class="btn primary welcome-cta" data-action="open-save">▸ OPEN SAVE</button>
+          </div>
+        </div>
+        <div class="tab-pane" data-pane="layout">
+          <div class="empty-state">
+            <div class="glyph">▦</div>
+            <div class="msg">Layout configuration</div>
+            <div class="hint">Open a save first.<br>The Layout tab lets you pick a preset, customize storage container assignments, set per-bucket stack caps, and configure operational reserves.</div>
+          </div>
+        </div>
+        <div class="tab-pane" data-pane="preview">
+          <div class="empty-state">
+            <div class="glyph">↔</div>
+            <div class="msg">Before &middot; After</div>
+            <div class="hint">Generate a plan from the Layout tab to see proposed changes here. Side-by-side diff for every container, with item counts and warnings before anything is written.</div>
+          </div>
+        </div>
+        <div class="tab-pane" data-pane="apply">
+          <div class="empty-state">
+            <div class="glyph">⚠</div>
+            <div class="msg">Apply plan to save</div>
+            <div class="hint">After reviewing your plan in Preview, return here to write it. Every Apply creates a timestamped backup first and runs post-write validation against your intent.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ITEM DETAIL (right) ─────────────────────────────────────── -->
+    <aside class="detail pane">
+      <div class="pane-header">
+        <span class="pane-title">ITEM DETAIL</span>
+        <span class="pane-sub">SELECT AN ITEM</span>
+      </div>
+      <div class="pane-body">
+        <div class="empty-state">
+          <div class="glyph">◌</div>
+          <div class="msg">No item selected</div>
+          <div class="hint">Click any slot in the Audit grid to inspect.</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ─── TERMINAL (bottom) ───────────────────────────────────────── -->
+    <section class="terminal">
+      <div class="terminal-header">
+        <span class="terminal-title">▌ TERMINAL</span>
+        <div class="terminal-controls">
+          <span class="stat" data-log-stat>0/0</span>
+          <select data-log-level title="Minimum level"></select>
+          <select data-log-category title="Filter by category"><option value="all">all</option></select>
+          <input type="text" data-log-text placeholder="filter…" />
+        </div>
+        <div class="terminal-spacer"></div>
+        <div class="terminal-controls">
+          <button class="btn icon" data-log-copy title="Copy log to clipboard">COPY</button>
+          <button class="btn icon" data-log-download title="Download as .txt">DL</button>
+          <button class="btn icon" data-log-clear title="Clear log">CLR</button>
+          <button class="btn icon" data-log-toggle title="Collapse/expand terminal">▼</button>
+        </div>
+      </div>
+      <div class="terminal-body" data-log-body></div>
+    </section>
+
+  </div>
+
+  <script src="log.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

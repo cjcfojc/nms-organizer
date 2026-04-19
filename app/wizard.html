@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-density="normal">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>No Man's Organizer — Setup</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="wizard.css">
+</head>
+<body class="wizard-body">
+
+  <header class="topbar">
+    <div class="brand">
+      <img class="brand-mark" data-brand-mark alt="No Man's Organizer">
+      <span class="brand-fallback">
+        <span class="brand-title">NO MAN'S ORGANIZER</span>
+        <span class="brand-sub">FIRST-RUN SETUP</span>
+      </span>
+    </div>
+    <div class="topbar-spacer"></div>
+    <div class="topbar-actions">
+      <span class="status-pill"><span class="label">PLATFORM</span><span class="value" data-platform>—</span></span>
+      <span class="status-pill"><span class="label">NODE</span><span class="value" data-node-version>—</span></span>
+    </div>
+  </header>
+
+  <main class="wizard-main">
+    <div class="wizard-card">
+      <div class="wizard-stepper" data-stepper>
+        <div class="wizard-step" data-step="welcome">1 · WELCOME</div>
+        <div class="wizard-step" data-step="save">2 · SAVE FOLDER</div>
+        <div class="wizard-step" data-step="install">3 · NMS INSTALL</div>
+        <div class="wizard-step" data-step="hgpaktool">4 · HGPAKTOOL</div>
+        <div class="wizard-step" data-step="icons">5 · ICONS</div>
+        <div class="wizard-step" data-step="done">6 · DONE</div>
+      </div>
+
+      <section class="wizard-pane" data-pane="welcome">
+        <h1>Welcome.</h1>
+        <p>This is a one-time setup. The app needs to know where your No Man's Sky save folder lives, where the game is installed (so it can extract item icons), and where to find <code>hgpaktool.exe</code> to read the game's <code>.pak</code> archives.</p>
+        <p>Most of this is auto-detected. You'll click through a few confirmations and then the app launches.</p>
+        <div class="wizard-row callout">
+          <span class="cat-badge cat-contraband">USE AT YOUR OWN RISK</span>
+          <span>This tool only supports the <b>latest</b> No Man's Sky release. No back-testing. Always keep a backup of your save before applying changes — the app auto-backs up every save you load, but a manual copy you control is still wise.</span>
+        </div>
+        <div class="wizard-actions">
+          <button class="btn primary" data-next="save">CONTINUE →</button>
+        </div>
+      </section>
+
+      <section class="wizard-pane" data-pane="save" hidden>
+        <h1>Save folder.</h1>
+        <p>Where No Man's Sky stores your saves. The app reads from here when you click OPEN SAVE, and writes back here when you choose WRITE NEW SLOT or OVERWRITE ORIGINAL.</p>
+        <div class="wizard-result" data-save-result>scanning…</div>
+        <div class="wizard-actions">
+          <button class="btn" data-prev="welcome">← BACK</button>
+          <button class="btn primary" data-next="install" data-step-needs="save">CONTINUE →</button>
+        </div>
+      </section>
+
+      <section class="wizard-pane" data-pane="install" hidden>
+        <h1>NMS install.</h1>
+        <p>The folder containing <code>GAMEDATA/PCBANKS/NMSARC.TexUI.pak</code>. Used only by the icon extraction step — the app itself never reads from here at runtime.</p>
+        <div class="wizard-result" data-install-result>scanning Steam libraries…</div>
+        <details class="wizard-manual">
+          <summary>Set manually</summary>
+          <div class="wizard-row">
+            <input class="modal-input" type="text" data-install-input placeholder="C:\SteamLibrary\steamapps\common\No Man's Sky">
+            <button class="btn" data-install-test>VERIFY</button>
+          </div>
+        </details>
+        <div class="wizard-actions">
+          <button class="btn" data-prev="save">← BACK</button>
+          <button class="btn primary" data-next="hgpaktool" data-step-needs="install">CONTINUE →</button>
+        </div>
+      </section>
+
+      <section class="wizard-pane" data-pane="hgpaktool" hidden>
+        <h1>hgpaktool.</h1>
+        <p>HelloGames packs game assets into <code>.pak</code> archives. <code>hgpaktool.exe</code> is the standard reader. We can't bundle it — it's GPL-licensed and would conflict with our MIT license — so you provide your own.</p>
+        <div class="wizard-result" data-hgpaktool-result>checking common locations…</div>
+        <details class="wizard-manual">
+          <summary>Where to get hgpaktool</summary>
+          <ul>
+            <li>Comes bundled with <a href="https://github.com/HolterPhylo/AMUMSS" target="_blank" rel="noopener">AMUMSS</a> at <code>MODBUILDER/hgpaktool.exe</code> — easiest if you already mod NMS.</li>
+            <li>Or download standalone from <a href="https://github.com/zencq/HGPak/releases" target="_blank" rel="noopener">zencq/HGPak releases</a> and drop it at <code>tools/hgpaktool.exe</code> in this repo.</li>
+          </ul>
+          <div class="wizard-row">
+            <input class="modal-input" type="text" data-hgpaktool-input placeholder="C:\Amumss\MODBUILDER\hgpaktool.exe">
+            <button class="btn" data-hgpaktool-test>VERIFY</button>
+          </div>
+        </details>
+        <div class="wizard-actions">
+          <button class="btn" data-prev="install">← BACK</button>
+          <button class="btn" data-next="icons">SKIP ICONS</button>
+          <button class="btn primary" data-next="icons" data-step-needs="hgpaktool">CONTINUE →</button>
+        </div>
+      </section>
+
+      <section class="wizard-pane" data-pane="icons" hidden>
+        <h1>Extract icons.</h1>
+        <p>Reads <code>NMSARC.TexUI.pak</code> from your install, extracts ~1,600 DDS textures, converts each to PNG. Takes 1–2 minutes. The app works without icons (colored badges instead) — you can re-run extraction anytime from the Settings tab.</p>
+        <div class="wizard-actions inline">
+          <button class="btn primary" data-extract-start>RUN EXTRACTION</button>
+          <button class="btn" data-next="done">SKIP</button>
+          <span class="wizard-extract-status" data-extract-status></span>
+        </div>
+        <pre class="wizard-extract-log" data-extract-log></pre>
+        <div class="wizard-actions">
+          <button class="btn" data-prev="hgpaktool">← BACK</button>
+          <button class="btn primary" data-next="done" data-extract-allow-next disabled>CONTINUE →</button>
+        </div>
+      </section>
+
+      <section class="wizard-pane" data-pane="done" hidden>
+        <h1>Setup complete.</h1>
+        <p>Your config is saved at <code data-config-path>nmsorganizer.config.json</code>. The app will remember these paths next time. To change anything later, edit that file or re-run the wizard from the Settings tab.</p>
+        <div class="wizard-actions">
+          <button class="btn primary" data-launch>LAUNCH APP →</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="log.js"></script>
+  <script type="module" src="wizard.js"></script>
+</body>
+</html>

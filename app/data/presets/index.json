@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "presets": [
+    { "id": "the_vault",        "file": "the_vault.json",        "label": "The Vault",          "description": "Default — pull from all chests + freighter cargo + ships, organize by category. Comprehensive operational reserves on ships and freighter. Excludes Exosuit + Nomad." },
+    { "id": "storage_only",     "file": "storage_only.json",     "label": "Storage Containers Only", "description": "Reorganize only the 10 storage containers. Ships, freighter, exocrafts, and exosuit completely untouched." },
+    { "id": "trader_stockpile", "file": "trader_stockpile.json", "label": "Trader Stockpile",   "description": "Same as The Vault but Trade gets two chests: one for commodities, one for high-value tradeables." },
+    { "id": "cooking_lab",      "file": "cooking_lab.json",      "label": "Cooking Lab",        "description": "Two chests dedicated to cooking: cooked dishes vs ingredients. Trade and Contraband share a chest." },
+    { "id": "builders_bench",   "file": "builders_bench.json",   "label": "Builder's Bench",    "description": "For base-builders: promotes Components into two chests + adds Curios chest. Cooking + Trade combined." },
+    { "id": "refiners_den",     "file": "refiners_den.json",     "label": "Refiner's Den",      "description": "For crafters: 3 chests for components/alloys/reactives. Curios and Trade share a chest." },
+    { "id": "combat_loadout",   "file": "combat_loadout.json",   "label": "Combat Loadout",     "description": "PvP / Sentinel hunters: heavy ship reserves (extra ammo, repair, shield batteries). Two Tech Module chests." },
+    { "id": "rookie_setup",     "file": "rookie_setup.json",     "label": "Rookie Setup",       "description": "For new players: targets only chests 1-4 with broad groupings. Higher-numbered chests configured but skipped if not yet built." },
+    { "id": "pristine",         "file": "pristine.json",         "label": "Pristine",           "description": "Sort items into category order but never consolidate stacks or empty source containers. Most conservative option." }
+  ]
+}
