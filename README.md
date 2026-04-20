@@ -1,10 +1,23 @@
-# No Man's Organizer
+![No Man's Organizer](app/assets/header_1.png)
 
 A local web app that organizes your No Man's Sky inventory across the 10 storage containers, freighter, and ships. Pick a layout, hit apply, the app rewrites your save with everything sorted into the chests you specified.
 
 Reads/writes the same `save.hg` + `mf_save.hg` pair format that NomNom and the game itself use. Auto-backs up every save you load. Refuses to apply if anything looks wrong.
 
 > ⚠ **Use at your own risk.** This tool only supports the **latest** No Man's Sky release. There has been no back-testing against older versions and there will not be. The save format changes between major NMS updates; if HelloGames ships a new version, assume this tool is broken until it's verified against the new format. Always keep a manual backup of any save you care about.
+
+## Install
+
+Requires [Node.js](https://nodejs.org/) (any LTS).
+
+1. Download the [latest as a ZIP](https://github.com/cjcfojc/nms-organizer/archive/refs/heads/main.zip) and extract it. Or `git clone https://github.com/cjcfojc/nms-organizer.git`.
+2. Double-click the launcher for your OS:
+   - **Windows:** `start-windows-quiet.vbs` (recommended, no terminal window) or `start-windows.bat` (verbose terminal — better for debugging)
+   - **macOS:** `start-macos.command` (right-click → Open the first time so Gatekeeper trusts it)
+   - **Linux:** `./start-linux.sh` from a terminal
+3. Your browser opens to `http://localhost:8765`. The setup wizard walks you through the rest.
+
+Full details, screenshots, and per-tab usage guide on the [Wiki](https://github.com/cjcfojc/nms-organizer/wiki).
 
 ## What it does
 
@@ -21,26 +34,6 @@ Reads/writes the same `save.hg` + `mf_save.hg` pair format that NomNom and the g
 - **No cheats.** Doesn't add items, change amounts, edit currency, modify ships, or anything beyond moving existing inventory between containers.
 - **No back-testing on older NMS versions.** Latest release only. If it loads a save it can't classify, items end up in "Uncategorized" and stay where they are.
 - **No telemetry, no network calls, no accounts.** Runs entirely on `localhost`. Nothing leaves your machine.
-
-## Quick start
-
-Requires **Node.js** (any LTS release — get it from [nodejs.org](https://nodejs.org/)).
-
-1. Download or clone this repo.
-2. Double-click the launcher for your OS:
-   - **Windows:** two options:
-     - `start-windows.bat` — opens a terminal window showing live server log lines. Best for first-time use, troubleshooting, or if you want to see what's happening. Close the window or `Ctrl+C` to stop.
-     - `start-windows-quiet.vbs` — same launch, but no terminal window. Server runs hidden in the background. Use `stop-windows.bat` to stop it later.
-   - **macOS:** `start-macos.command` (right-click → Open the first time so Gatekeeper trusts it).
-   - **Linux:** `./start-linux.sh` from a terminal.
-3. Your browser opens to `http://localhost:8765`. First time, the setup wizard walks you through:
-   - confirming your save folder location (auto-detected),
-   - locating your NMS install (Steam library scan),
-   - locating `hgpaktool.exe` (AMUMSS users already have this — see below if you don't),
-   - extracting item icons (~1 minute, optional but the app looks much better with them).
-4. After setup, the app launches. Click `OPEN SAVE` and pick a slot.
-
-To stop: close the terminal window, or `Ctrl+C` in it.
 
 ## macOS / Linux notes
 
