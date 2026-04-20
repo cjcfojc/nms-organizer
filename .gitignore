@@ -13,8 +13,11 @@ logs/
 
 # ─── Extracted game assets (copyrighted) ──────────────────────────────
 # app/assets/icons/ is populated locally by `node extract_icons.js` —
-# the PNGs are HelloGames assets we can't redistribute.
+# the PNGs are HelloGames assets we can't redistribute. icons.json is the
+# manifest the extractor produces alongside them; it's regenerated on every
+# extract with a fresh timestamp, so we don't track it either.
 app/assets/icons/
+app/data/icons.json
 extracted/
 
 # ─── Local user config ────────────────────────────────────────────────
@@ -49,3 +52,7 @@ yarn-error.log*
 *.log
 *.bak
 *.tmp
+
+# ─── Wiki staging (lives in the separate <repo>.wiki.git repo) ────────
+wiki_pages/
+wiki_screenshots/
